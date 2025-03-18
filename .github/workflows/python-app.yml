@@ -2,7 +2,7 @@ name: Run Telegram Bot
 
 on:
   schedule:
-    - cron: "*/1 * * * *"  # Runs every 10 minutes
+    - cron: "*/60 * * * *"  # Runs every 10 minutes
   workflow_dispatch:  # Allows manual execution
 
 jobs:
@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Install FFMPEG
+        run: sudo apt update && sudo apt install -y ffmpeg
 
       - name: Set up Python
         uses: actions/setup-python@v4
