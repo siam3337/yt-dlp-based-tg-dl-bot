@@ -1,0 +1,4 @@
+pyTelegramBotAPI
+dropbox
+requests
+yt-dlp
